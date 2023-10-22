@@ -50,6 +50,12 @@ function validateForm() {
     const numerotarjetaclav = document.querySelector('.credit-card-password');
     const tarjetanumclav = numerotarjetaclav.value;
 
+    const nombreDeLaPersona = document.querySelector(".nombreDeLaPersona")
+    const nombreDeLaPersonaValor = nombreDeLaPersona.value
+
+    const productoPedidoPorUsuario = document.querySelector(".productoPedido")
+    const productoPedidoValor = productoPedidoPorUsuario.value
+   
     if (tarjetanumclav.length != 3) {
         todoCorrecto = true;
     }
@@ -57,12 +63,19 @@ function validateForm() {
     if (tarjetanum.length != 16) {
         todoCorrecto = true;
     }
+    if(nombreDeLaPersonaValor >= 0){
+        todoCorrecto = true;
+    }
+    if(productoPedidoValor >= 0){
+        todoCorrecto = true;
+    }
+  
 
 
     if (todoCorrecto) {
         alert("datos incorrectos");
     } else {
-        alert("Gracias sus datos se utilizaran para comprar una tv ")
+        alert(`Gracias su compra ${nombreDeLaPersonaValor} recivira su ${productoPedidoValor} en la brevedad`)
     }
 
 }
@@ -80,7 +93,7 @@ function validateFormEmail() {
     if (todoCorrecto) {
         alert("datos incorrectos");
     } else {
-        alert("Gracias sus datos se le llenara de spam su email tasbitalia camarrada")
+        alert("Gracias sus le responderems a la vrebedad")
     }
 
 }
