@@ -6,9 +6,7 @@ function mostarAlerta() {
     alert("Este articulo se añadira proximamente")
 }
 
-function saludarAlPete() {
-    alert("Hola gato")
-}
+
 modo.addEventListener('click', function () {
 
     document.body.classList.toggle('dark-mod')
@@ -103,12 +101,34 @@ function validateEmail(email) {
     return regex.test(email)
 }
 
-document.querySelector("button.button-menu-toggle")
-    .addEventListener("click", function() {
-           document.querySelector(".nav-links").      
-           classList.toggle("nav-links-responsive")
-                    
-                    })
+var button = document.getElementById('toggleButton');
+var navLinks = document.querySelector('.nav-links');
+var nav = document.querySelector('.navbar');
+
+button.addEventListener('click', function () {
+    // Toggle the 'nav-links-responsive' class
+    navLinks.classList.toggle('nav-links-responsive');
+
+    // Toggle the 'appear' class on the navbar
+    nav.classList.toggle('appear', navLinks.classList.contains('nav-links-responsive'));
+
+    // Deshabilitar el botón durante la animación
+    button.disabled = true;
+
+    // Reiniciar el estado del botón después de la duración de la transición
+    setTimeout(function () {
+        button.disabled = false;
+    }, 500); // Ajusta el tiempo según la duración de la transición
+});
+
+document.getElementById('toggleButton').addEventListener('click', function () {
+    // Toggle the 'appear' class
+    nav.classList.toggle('appear');
+
+    // Adjust the container's transform property based on the 'appear' class
+    nav.style.transform = nav.classList.contains('appear') ? 'translateX(0)' : 'translateX(-100%)';
+});
+
 
 
           //Esto era antes de conocer el grid
