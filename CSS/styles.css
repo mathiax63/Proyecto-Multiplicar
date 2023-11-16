@@ -200,9 +200,7 @@ footer {
     flex: 100%;
   }
 
-  img {
-   
-  }
+  
 
   .nav-links {
     display: none;
@@ -278,9 +276,7 @@ footer {
   footer{
     margin-top: 60%;
   }
-  .container-nav{
-   
-  }
+ 
   .aboutIMG{
     flex-direction: column;
     max-width: 100%;
